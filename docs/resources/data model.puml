@@ -1,0 +1,38 @@
+@startuml
+entity "Usuario" as usuario {
+  +UsuarioID : INTEGER
+  Nombre : TEXT
+  CorreoElectronico : TEXT
+  FechaNacimiento : DATE
+  Genero : TEXT
+  FechaRegistro : DATETIME
+}
+
+entity "Valoración" as valoracion {
+  +ValoracionID : INTEGER
+  Fecha : DATETIME
+  Peso : REAL
+  BMI : REAL
+  GrasaCorporal : REAL
+  MasaMuscular : REAL
+  CaloriasDiarias : INTEGER
+  Hombro : REAL
+  Brazo : REAL
+  Cintura : REAL
+  Cadera : REAL
+  Pierna : REAL
+  Pantorrilla : REAL
+  EstadoMetabolico : TEXT
+}
+
+entity "Métrica" as metrica {
+  +MetricaID : INTEGER
+  Tipo : TEXT
+  Valor : REAL
+}
+
+' Relaciones
+usuario --o{ valoracion : tiene
+valoracion --o{ metrica : tiene
+
+@enduml

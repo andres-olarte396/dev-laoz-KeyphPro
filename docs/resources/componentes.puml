@@ -1,0 +1,27 @@
+@startuml
+package "Frontend" {
+  [Interfaz de Usuario]
+  [Gráficos y Visualización]
+}
+
+package "Backend" {
+  [API REST]
+  [Servicios de Dominio]
+  [Repositorios]
+}
+
+package "Base de Datos" {
+  [SQLite]
+}
+
+package "Integraciones" {
+  [APIs de terceros]
+}
+
+[Interfaz de Usuario] --> [API REST] : HTTP Request
+[API REST] --> [Servicios de Dominio]
+[Servicios de Dominio] --> [Repositorios]
+[Repositorios] --> [SQLite]
+[Servicios de Dominio] --> [APIs de terceros] : Opcional
+[Gráficos y Visualización] --> [API REST] : Fetch Data
+@enduml

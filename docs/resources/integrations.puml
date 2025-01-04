@@ -1,0 +1,8 @@
+@startuml
+Frontend --> API : Consultas y Comandos
+API --> SQLite : Operaciones CRUD
+API --> Librerías de Gráficas : Generación de gráficos
+API --> Exportadores (PDF, Excel) : Solicitudes de exportación
+API --> Notificaciones : Envío de correos
+API --> Servicios Externos : Consultas de datos adicionales
+@enduml

@@ -1,0 +1,55 @@
+@startuml
+
+!define RECTANGLE class
+
+' Definición de componentes
+package "Frontend" {
+  RECTANGLE Frontend_UI {
+    [Pantalla de Registro de Valoraciones]
+    [Pantalla de Visualización de Resultados]
+    [Gráficos Interactivos]
+  }
+}
+
+package "Backend" {
+  RECTANGLE API_Usuarios {
+    [API de Usuarios]
+  }
+  RECTANGLE API_Valoraciones {
+    [API de Valoraciones]
+  }
+  RECTANGLE API_Graficos {
+    [API de Gráficos]
+  }
+  RECTANGLE Servicio_Calculos {
+    [Servicio de Cálculos]
+  }
+}
+
+package "Base de Datos" {
+  RECTANGLE DB {
+    [SQLite Database]
+  }
+}
+
+package "Integraciones Externas" {
+  RECTANGLE API_Externas {
+    [API de Calorías Diarias]
+    [API de Cálculo de BMI]
+  }
+}
+
+' Definición de relaciones entre componentes
+Frontend_UI -down-> API_Usuarios : Interacción con la API de Usuarios
+Frontend_UI -down-> API_Valoraciones : Interacción con la API de Valoraciones
+Frontend_UI -down-> API_Graficos : Obtener Datos para Gráficos
+
+API_Usuarios -down-> DB : Almacenar Información de Usuario
+API_Valoraciones -down-> DB : Almacenar y Obtener Valoraciones
+API_Valoraciones -down-> Servicio_Calculos : Realizar Cálculos de BMI
+
+Servicio_Calculos -down-> API_Externas : Consultar APIs Externas (TMB, BMI)
+
+API_Graficos -down-> DB : Obtener Datos para Graficar Progreso
+
+@enduml

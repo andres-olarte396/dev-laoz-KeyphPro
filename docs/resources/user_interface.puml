@@ -1,0 +1,9 @@
+@startuml
+[*] --> InicioSesion : Usuario no autenticado
+InicioSesion --> Dashboard : Login exitoso
+Dashboard --> NuevaValoracion : Agregar nueva valoración
+NuevaValoracion --> Dashboard : Valoración guardada
+Dashboard --> Reportes : Ver reportes
+Dashboard --> Configuracion : Configurar sistema
+[*] --> Dashboard : Usuario autenticado
+@enduml
