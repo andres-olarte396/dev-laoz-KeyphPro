@@ -83,15 +83,15 @@ La documentación completa del proyecto está disponible en el directorio `docs/
 1. **Clonar el repositorio:**
 
    ```bash
-   git clone https://github.com/usuario/fittrack-pro.git
-   cd fittrack-pro
+   git clone https://github.com/usuario/Keyph-pro.git
+   cd Keyph-pro
    ```
 
 2. **Configuración del Backend:**
    - Navega al directorio del backend:
 
      ```bash
-     cd FitTrackPro.Backend
+     cd KeyphPro.Backend
      ```
 
    - Restaura las dependencias:
@@ -116,7 +116,7 @@ La documentación completa del proyecto está disponible en el directorio `docs/
    - Navega al directorio del frontend:
 
      ```bash
-     cd FitTrackPro.Frontend
+     cd KeyphPro.Frontend
      ```
 
    - Instala las dependencias:
@@ -140,10 +140,10 @@ La documentación completa del proyecto está disponible en el directorio `docs/
 ## **Estructura del Proyecto**
 
 ```plaintext
-FitTrackPro/
+KeyphPro/
 ├── docs/                     # Documentación del proyecto.
-├── FitTrackPro.Backend/      # Código del backend (.NET).
-├── FitTrackPro.Frontend/     # Código del frontend.
+├── KeyphPro.Backend/      # Código del backend (.NET).
+├── KeyphPro.Frontend/     # Código del frontend.
 ├── tests/                    # Pruebas automatizadas.
 └── README.md                 # Documentación general.
 ```

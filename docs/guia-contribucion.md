@@ -26,7 +26,7 @@
 
 Si encuentras un error o tienes alguna idea para mejorar el sistema, sigue estos pasos:
 
-1. **Verifica si el problema ya existe:** Revisa los [issues](https://github.com/usuario/fittrack-pro/issues) antes de abrir uno nuevo.
+1. **Verifica si el problema ya existe:** Revisa los [issues](https://github.com/andres-olarte396/dev-laoz-KeyphPro/issues) antes de abrir uno nuevo.
 2. **Crea un nuevo issue:**
    - Describe claramente el problema.
    - Incluye pasos para reproducirlo, si aplica.
@@ -74,10 +74,10 @@ Si deseas contribuir con código:
 Familiarízate con la organización del proyecto:
 
 ```plaintext
-FitTrackPro/
+KeyphPro/
 ├── docs/                     # Documentación del proyecto.
-├── FitTrackPro.Backend/      # Código del backend (.NET).
-├── FitTrackPro.Frontend/     # Código del frontend.
+├── KeyphPro.Backend/      # Código del backend (.NET).
+├── KeyphPro.Frontend/     # Código del frontend.
 ├── tests/                    # Pruebas automatizadas.
 └── README.md                 # Documentación general.
 ```
@@ -145,7 +145,7 @@ Si tienes preguntas o necesitas ayuda:
 
 - Abre un **issue** con la etiqueta `question`.
 - Únete al canal de comunicación del proyecto (e.g., Slack o Discord).
-- Contacta al administrador del proyecto en [contacto@fittrackpro.com](mailto:contacto@fittrackpro.com).
+- Contacta al administrador del proyecto en [contacto@Keyphpro.com](mailto:contacto@Keyphpro.com).
 
 ---
 

@@ -40,6 +40,7 @@ Este manual te guiará paso a paso para maximizar su uso.
 ## **Primeros Pasos**
 
 ### **Creación de Cuenta**
+
 1. Abre la aplicación o el sitio web de **Keyph Pro**.
 2. Haz clic en **"Registrarse"**.
 3. Completa los siguientes campos:
@@ -51,6 +52,7 @@ Este manual te guiará paso a paso para maximizar su uso.
 5. Recibirás un correo electrónico para verificar tu cuenta. Haz clic en el enlace proporcionado.
 
 ### **Inicio de Sesión**
+
 1. En la pantalla principal, ingresa tu correo electrónico y contraseña.
 2. Haz clic en **"Iniciar Sesión"**.
 3. Si olvidaste tu contraseña, selecciona **"¿Olvidaste tu contraseña?"** y sigue las instrucciones.
@@ -60,6 +62,7 @@ Este manual te guiará paso a paso para maximizar su uso.
 ## **Funciones Principales**
 
 ### **Registro de Métricas**
+
 1. Dirígete a la sección **"Registrar Métricas"**.
 2. Completa las métricas solicitadas, como peso, grasa corporal, medidas, entre otras.
 3. Asegúrate de que los valores estén dentro de los rangos permitidos:
@@ -68,11 +71,13 @@ Este manual te guiará paso a paso para maximizar su uso.
 4. Haz clic en **"Guardar"** para registrar la información.
 
 ### **Visualización de Avances**
+
 1. Accede a la pestaña **"Progresos"**.
 2. Selecciona un rango de fechas o un período específico (e.g., última semana, último mes).
 3. Revisa el progreso en tablas organizadas por métrica.
 
 ### **Gráficos Interactivos**
+
 1. En la sección de progresos, selecciona **"Ver Gráficos"**.
 2. Configura:
    - Métricas a visualizar (e.g., peso, grasa corporal).
@@ -84,6 +89,7 @@ Este manual te guiará paso a paso para maximizar su uso.
 ## **Configuración**
 
 ### **Edición de Perfil**
+
 1. Ve a **"Configuración" > "Perfil"**.
 2. Modifica tu información básica:
    - Nombre.
@@ -92,6 +98,7 @@ Este manual te guiará paso a paso para maximizar su uso.
 3. Haz clic en **"Guardar Cambios"**.
 
 ### **Preferencias de Notificación**
+
 1. Accede a **"Configuración" > "Notificaciones"**.
 2. Ajusta las alertas según tus necesidades:
    - Recordatorios de registro.
@@ -103,12 +110,15 @@ Este manual te guiará paso a paso para maximizar su uso.
 ## **Preguntas Frecuentes**
 
 ### **1. ¿Cómo puedo eliminar una métrica registrada?**
+
    - Ve a la sección **"Historial de Métricas"**, selecciona el registro y haz clic en **"Eliminar"**.
 
 ### **2. ¿Qué hago si los datos no aparecen en los gráficos?**
+
    - Asegúrate de haber registrado las métricas en las fechas seleccionadas.
 
 ### **3. ¿Puedo exportar los datos?**
+
    - Sí, ve a **"Exportar Datos"** y selecciona el formato deseado (CSV, PDF).
 
 ---
