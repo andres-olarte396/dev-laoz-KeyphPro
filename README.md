@@ -38,16 +38,45 @@ El objetivo principal es ofrecer una herramienta confiable y escalable que pueda
 
 La documentación completa del proyecto está disponible en el directorio `docs/`. A continuación, se proporciona un índice:
 
-1. [**Diseño de la Solución**](docs/04-diseno-solucion/)
-   - [01 - Arquitectura](docs/04-diseno-solucion/01-arquitectura.md)
-   - [02 - Modelo de Datos](docs/04-diseno-solucion/02-modelo-datos.md)
-   - [03 - Componentes](docs/04-diseno-solucion/03-componentes.md)
-   - [04 - Interfaces de Usuario](docs/04-diseno-solucion/04-interfaces-usuario.md)
-   - [05 - Integraciones](docs/04-diseno-solucion/05-integraciones.md)
-   - [06 - Diseño de Marca](docs/04-diseno-solucion/06-diseno-de-marca.md)
+## 01. [Introducción](docs/01-introduccion.md)
 
-2. [**Manual de Usuario**](docs/manual-usuario.md) *(Pendiente de desarrollo)*  
-3. [**Guía de Contribución**](docs/guia-contribucion.md) *(Pendiente de desarrollo)*
+- [Propósito](docs/01-introduccion/01-proposito.md)
+- [Alcance](docs/01-introduccion/02-alcance.md)
+- [Definiciones](docs/01-introduccion/03-definiciones.md)
+- [Referencias](docs/01-introduccion/04-referencias.md)
+
+## 02. [Backlog del Producto](docs/02-backlog-producto.md)
+
+- [Requerimientos](docs/02-backlog-producto/00-requerimientos.md)
+- [Priorización](docs/02-backlog-producto/00-priorizacion.md)
+- [Registro de usuario](docs/02-backlog-producto/01-Registro-de-usuario.md)
+- [Registro de validación fisica](docs/02-backlog-producto/02-Registro-de-valoracion-fisica.md)
+- [Visualizacion de historial de valoraciones](docs/02-backlog-producto/03-Visualizacion-de-historial-de-valoraciones.md)
+- [Exportación de datos](docs/02-backlog-producto/04-Exportacion-de-datos.md)
+
+## 03. [Sprint Planning](docs/03-sprint-planning.md)
+
+- [Sprint 1](docs/03-sprint-planning/01-sprint-1.md)
+- [Sprint 2](docs/03-sprint-planning/02-sprint-2.md)
+- [Sprint 3](docs/03-sprint-planning/03-sprint-3.md)
+
+## 04. [Diseño de la Solución](docs/04-diseno-solucion.md)
+
+- [Arquitectura](docs/04-diseno-solucion/01-arquitectura.md)
+- [Modelo de Datos](docs/04-diseno-solucion/02-modelo-datos.md)
+- [Componentes](docs/04-diseno-solucion/03-componentes.md)
+- [Interfaces de Usuario](docs/04-diseno-solucion/04-interfaces-usuario.md)
+- [Integraciones](docs/04-diseno-solucion/05-integraciones.md)
+- [Diseño de marca](docs/04-diseno-solucion/06-diseno-de-marca.md)
+
+## 05. [Validación](docs/05-validacion.md)
+
+- [Criterios de Aceptación](docs/05-validacion/01-criterios-aceptacion.md)
+- [Plan de Pruebas Inicial](docs/05-validacion/02-plan-pruebas-inicial.md)
+
+## 06. [Manual de Usuario](docs/manual-usuario.md) *(Pendiente de desarrollo)
+
+## 07. [Guía de Contribución](docs/guia-contribucion.md) *(Pendiente de desarrollo)
 
 ---
 
