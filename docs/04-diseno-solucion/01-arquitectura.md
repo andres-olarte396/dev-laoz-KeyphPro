@@ -70,4 +70,11 @@ El sistema está diseñado para ser **escalable** y **modular**, lo que permite 
 
 ## **Diagrama de Arquitectura**
 
-![Diagrama de arquitectura](../resources/arquitectura.png)
+El siguiente diagrama muestra la arquitectura del sistema:
+
+![Arquitectura del Sistema](../resources/images/architecture/system-architecture.png)
+
+### Generación de Diagramas
+
+El código fuente para este diagrama se encuentra en:
+[`system-architecture.puml`](../resources/uml/system-architecture.puml)

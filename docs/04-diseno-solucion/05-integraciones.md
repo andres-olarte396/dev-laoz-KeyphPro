@@ -48,17 +48,21 @@ API --> Frontend : Respuesta JSON
 ### 2. **Librerías de Gráficas**
 
 #### **Descripción:**
+
 Implementación de gráficos interactivos para visualizar el progreso de las métricas.
 
 #### **Proveedores:**
+
 - **Chart.js**: Gráficos ligeros y fáciles de personalizar.
 - **ApexCharts** (opcional): Para gráficos avanzados con interacciones dinámicas.
 
 #### **Propósito:**
+
 - Mostrar visualizaciones de datos históricos.
 - Ofrecer interacción directa con puntos y tendencias en las gráficas.
 
 #### **Integración Técnica:**
+
 - Librerías instaladas y gestionadas mediante **npm**.
 - Configuración dinámica basada en datos obtenidos de la API.
 
@@ -161,7 +165,12 @@ Envía notificaciones automáticas cuando se completan eventos importantes, como
 
 ## **Esquema General de Integraciones**
 
-![Diagrama de integraciones](../resources/integrations.png)
+![Diagrama de integraciones](../resources/images/architecture/integrations.png)
+
+### Generación de Diagramas
+
+El código fuente para este diagrama se encuentra en:
+[`integrations.puml`](../resources/uml/integrations.puml)
 
 ---
 

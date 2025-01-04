@@ -163,7 +163,12 @@ Permitir la configuración de parámetros del sistema y datos personales del usu
 
 ## **Diagrama de Navegación**
 
-![Interfaz de usuario](../resources/user_interface.png)
+![Interfaz de usuario](../resources/images/architecture/user_interface.png)
+
+### Generación de Diagramas
+
+El código fuente para este diagrama se encuentra en:
+[`user_interface.puml`](../resources/uml/user_interface.puml)
 
 ---
 

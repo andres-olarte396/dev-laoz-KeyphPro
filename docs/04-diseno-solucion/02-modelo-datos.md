@@ -80,7 +80,12 @@ Aunque no se incluye directamente en el esquema, el **Historial de Valoraciones*
 
 A continuación, se muestra un modelo de diagrama de entidades-relaciones (ERD) de las entidades y sus relaciones:
 
-![Diagrama de datos](../resources/data%20model.png)
+![Diagrama de datos](../resources/images/architecture/data_model.png)
+
+### Generación de Diagramas
+
+El código fuente para este diagrama se encuentra en:
+[`data_model.puml`](../resources/uml/data_model.puml)
 
 ### **Descripción de las Relaciones:**
 

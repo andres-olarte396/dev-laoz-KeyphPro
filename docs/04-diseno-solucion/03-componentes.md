@@ -116,7 +116,12 @@ Este componente es responsable de generar visualizaciones interactivas para que 
 
 A continuación, se presenta un diagrama de componentes que detalla las interacciones entre ellos.
 
-![Diagrama de Componentes](../resources/componentes.png)
+![Diagrama de Componentes](../resources/images/architecture/components.png)
+
+### Generación de Diagramas
+
+El código fuente para este diagrama se encuentra en:
+[`components.puml`](../resources/uml/components.puml)
 
 ---
 
