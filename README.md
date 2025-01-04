@@ -38,13 +38,13 @@ El objetivo principal es ofrecer una herramienta confiable y escalable que pueda
 
 La documentación completa del proyecto está disponible en el directorio `docs/`. A continuación, se proporciona un índice:
 
-1. [**Diseño de la Solución**](docs/07-diseno-solucion/)
-   - [01 - Arquitectura](docs/07-diseno-solucion/01-arquitectura.md)
-   - [02 - Modelo de Datos](docs/07-diseno-solucion/02-modelo-datos.md)
-   - [03 - Componentes](docs/07-diseno-solucion/03-componentes.md)
-   - [04 - Interfaces de Usuario](docs/07-diseno-solucion/04-interfaces-usuario.md)
-   - [05 - Integraciones](docs/07-diseno-solucion/05-integraciones.md)
-   - [06 - Diseño de Marca](docs/07-diseno-solucion/06-diseno-de-marca.md)
+1. [**Diseño de la Solución**](docs/04-diseno-solucion/)
+   - [01 - Arquitectura](docs/04-diseno-solucion/01-arquitectura.md)
+   - [02 - Modelo de Datos](docs/04-diseno-solucion/02-modelo-datos.md)
+   - [03 - Componentes](docs/04-diseno-solucion/03-componentes.md)
+   - [04 - Interfaces de Usuario](docs/04-diseno-solucion/04-interfaces-usuario.md)
+   - [05 - Integraciones](docs/04-diseno-solucion/05-integraciones.md)
+   - [06 - Diseño de Marca](docs/04-diseno-solucion/06-diseno-de-marca.md)
 
 2. [**Manual de Usuario**](docs/manual-usuario.md) *(Pendiente de desarrollo)*  
 3. [**Guía de Contribución**](docs/guia-contribucion.md) *(Pendiente de desarrollo)*
