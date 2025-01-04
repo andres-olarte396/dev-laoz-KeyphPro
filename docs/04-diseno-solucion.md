@@ -4,11 +4,11 @@ En esta sección se detalla el diseño de la solución para KeyphPro, incluyendo
 
 ## Menú de Contenidos
 
-1. [Arquitectura](01-arquitectura.md)
-2. [Modelo de Datos](02-modelo-datos.md)
-3. [Componentes](03-componentes.md)
-4. [Interfaces de Usuario](04-interfaces-usuario.md)
-5. [Integraciones](05-integraciones.md)
+1. [Arquitectura](04-diseno-solucion/01-arquitectura.md)
+2. [Modelo de Datos](04-diseno-solucion/02-modelo-datos.md)
+3. [Componentes](04-diseno-solucion/03-componentes.md)
+4. [Interfaces de Usuario](04-diseno-solucion/04-interfaces-usuario.md)
+5. [Integraciones](04-diseno-solucion/05-integraciones.md)
 
 ## Descripción General
 

@@ -4,10 +4,10 @@ Bienvenido a la documentación de KeyphPro. Este documento te guiará a través 
 
 ## Menú de Contenidos
 
-1. [Propósito](01-proposito.md)
-2. [Alcance](02-alcance.md)
-3. [Definiciones](03-definiciones.md)
-4. [Referencias](04-referencias.md)
+1. [Propósito](01-introduccion/01-proposito.md)
+2. [Alcance](01-introduccion/02-alcance.md)
+3. [Definiciones](01-introduccion/03-definiciones.md)
+4. [Referencias](01-introduccion/04-referencias.md)
 
 ## Descripción General
 
