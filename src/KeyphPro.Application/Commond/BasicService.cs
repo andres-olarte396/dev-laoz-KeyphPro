@@ -26,20 +26,19 @@ namespace KeyphPro.Application.Commond
         }
         public async Task<ResultModelBase<TModel?>> AddAsync(TModel model)
         {
-            var results = Validate(model);
-            if (results.Count != 0)
-            {
-                var msg = string.Join("\n - ", results);
-                return new ResultModelBase<TModel?>(msg);
-            }
-
-            var entity = _mapper.Map<TEntity>(model);
-            entity.OperationType = OperationType.Create;
-            entity.Date = DateTime.Now;
-            entity.User = "System";
-
             try
             {
+                var results = Validate(model);
+                if (results.Count != 0)
+                {
+                    var msg = string.Join("\n - ", results);
+                    return new ResultModelBase<TModel?>(msg);
+                }
+
+                var entity = _mapper.Map<TEntity>(model);
+                entity.OperationType = OperationType.Create;
+                entity.Date = DateTime.Now;
+                entity.User = "System";
                 entity.Id = await _unitOfWork.CommandRepository<TEntity, TId>().CreateAsync(entity);
                 await _unitOfWork.SaveChangesAsync();
 

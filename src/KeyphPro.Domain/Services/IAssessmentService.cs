@@ -11,7 +11,7 @@ namespace KeyphPro.Domain.Services
         Task<ResultModelBase<AssessmentModel>> GetAssessment(int assessmentId);
         Task<ResultModelBase<IEnumerable<AssessmentModel>>> GetAssessmentsByUser(Guid userId);
         decimal ComputeBMI(decimal weight, decimal height);
-        IList<ValidationResult> ValidateAssessmentData(AssessmentModel assessment);
-        Task<ResultModelBase<IEnumerable<string>>> CheckWarningConditions(decimal bodyFat, decimal muscleMass);
+        ResultModelBase<bool> ValidateAssessmentData(AssessmentModel assessment);
+        ResultModelBase<IEnumerable<string>> CheckWarningConditions(decimal bodyFat, decimal muscleMass);
     }
 }

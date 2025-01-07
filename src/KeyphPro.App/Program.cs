@@ -49,17 +49,19 @@ namespace KeyphPro.App
 
                    // Add the configuration to the services
                    services.AddSingleton(configuration);
-
                    // Configure the database connection
+                   string commandConnection = configuration.GetConnectionString("CommandConnection");
+                   string queryConnection = configuration.GetConnectionString("QueryConnection");
+
                    // Agrega KeyphProDbContext al contenedor de servicios
                    services.AddDbContext<KeyphProCommandDbContext>(
                     options =>
-                        options.UseSqlite(configuration.GetConnectionString("CommandConnection"))
+                        options.UseSqlite(commandConnection)
                                 .LogTo(Console.WriteLine, LogLevel.Information));
 
                    services.AddDbContext<KeyphProQueryDbContext>(
                       options =>
-                          options.UseSqlite(configuration.GetConnectionString("QueryConnection"))
+                          options.UseSqlite(queryConnection)
                                  .LogTo(Console.WriteLine, LogLevel.Information));
 
                    // Registrar el patrón UnitOfWork

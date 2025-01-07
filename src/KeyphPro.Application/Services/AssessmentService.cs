@@ -5,7 +5,6 @@ using KeyphPro.Domain.Entities.Database;
 using KeyphPro.Domain.Entities.Models;
 using KeyphPro.Domain.Repositories;
 using KeyphPro.Domain.Services;
-using System.ComponentModel.DataAnnotations;
 
 namespace KeyphPro.Application.Services
 {
@@ -28,20 +27,20 @@ namespace KeyphPro.Application.Services
             _basicService = basicService;
         }
 
-        public Task<ResultModelBase<IEnumerable<string>>> CheckWarningConditions(decimal bodyFat, decimal muscleMass)
+        public ResultModelBase<IEnumerable<string>> CheckWarningConditions(decimal bodyFat, decimal muscleMass)
         {
             var warnings = new List<string>();
 
             // Validación de parámetros
-            if (bodyFat < 0 || bodyFat > 100)
-                warnings.Add("La grasa corporal debe estar entre 0% y 100%.");
-            if (muscleMass < 0 || muscleMass > 100)
-                warnings.Add("La masa muscular debe estar entre 0% y 100%.");
+            if (bodyFat < 10 || bodyFat > 40)
+                warnings.Add("La grasa corporal debe estar entre 10% y 40%.");
+            if (muscleMass < 25 || muscleMass > 45)
+                warnings.Add("La masa muscular debe estar entre 25% y 45%.");
 
             // Validar que la suma esté aproximadamente en 100% (±5%)
             var totalPercentage = bodyFat + muscleMass;
-            if (totalPercentage < 95 || totalPercentage > 105)
-                warnings.Add("La suma de grasa corporal y masa muscular debe ser aproximadamente 100%.");
+            if (totalPercentage < 40 || totalPercentage > 80)
+                warnings.Add("La suma de grasa corporal y masa muscular debe ser menor a 70% y mayor a 40%.");
 
             // Validar rango saludable para grasa corporal
             if (bodyFat < 10 || bodyFat > 35)
@@ -55,9 +54,8 @@ namespace KeyphPro.Application.Services
                 Message = warnings.Any() ? "Se encontraron condiciones de advertencia." : "No hay condiciones de advertencia."
             };
 
-            return Task.FromResult(result);
+            return result;
         }
-
         public decimal ComputeBMI(decimal weight, decimal height)
         {
             // Validaciones iniciales
@@ -66,8 +64,11 @@ namespace KeyphPro.Application.Services
             if (height <= 0)
                 throw new ArgumentException("La altura debe ser mayor que cero.", nameof(height));
 
+            // Convertir la altura de cm a metros
+            decimal heightInMeters = height / 100;
+
             // Cálculo del BMI
-            decimal bmi = weight / (height * height);
+            decimal bmi = weight / (heightInMeters * heightInMeters);
 
             // Redondear el resultado a dos decimales para mayor claridad
             return Math.Round(bmi, 2);
@@ -103,9 +104,16 @@ namespace KeyphPro.Application.Services
             return _basicService.UpdateAsync(assessment);
         }
 
-        public IList<ValidationResult> ValidateAssessmentData(AssessmentModel assessment)
+        public ResultModelBase<bool> ValidateAssessmentData(AssessmentModel assessment)
         {
-            return _basicService.Validate(assessment);
+            var results = _basicService.Validate(assessment);
+            if (results.Count != 0)
+            {
+                var msg = string.Join("\n - ", results);
+                return new ResultModelBase<bool>(msg);
+            }
+
+            return new ResultModelBase<bool>(true, 200, "Success");
         }
     }
 }

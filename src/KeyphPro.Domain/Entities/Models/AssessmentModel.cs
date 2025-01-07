@@ -14,6 +14,9 @@ namespace KeyphPro.Domain.Entities.Models
         [Required]
         [Range(30, 300, ErrorMessage = "Weight must be between 30 and 300 kg.")]
         public decimal Weight { get; set; }
+        [Required]
+        [Range(100, 200, ErrorMessage = "Heigth must be between 100 and 200 cm.")]
+        public decimal Heigth { get; set; }
 
         [Range(10, 50, ErrorMessage = "BMI must be between 10 and 50.")]
         public decimal BMI { get; set; } // Calculated property
