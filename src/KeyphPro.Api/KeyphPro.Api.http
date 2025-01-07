@@ -1,0 +1,6 @@
+@KeyphPro.Api_HostAddress = http://localhost:5239
+
+GET {{KeyphPro.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
