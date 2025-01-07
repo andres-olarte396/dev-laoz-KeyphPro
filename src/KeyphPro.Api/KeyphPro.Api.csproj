@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\KeyphPro.Application\KeyphPro.Application.csproj" />
+    <ProjectReference Include="..\KeyphPro.Infrastructure\KeyphPro.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

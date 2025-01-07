@@ -2,7 +2,7 @@
 using KeyphPro.Domain.Repositories;
 using KeyphPro.Domain.Repositories.Commands;
 using KeyphPro.Domain.Repositories.Queries;
-using Microsoft.EntityFrameworkCore;
+using KeyphPro.Infrastructure.Data;
 
 namespace KeyphPro.Infrastructure
 {
@@ -10,10 +10,10 @@ namespace KeyphPro.Infrastructure
     /// Unit of work
     /// </summary>
     /// <seealso cref="KeyphPro.Infrastructure.IUnitOfWork" />
-    public class UnitOfWork(DbContext commandContext, DbContext queryContext) : IUnitOfWork
+    public class UnitOfWork(KeyphProCommandDbContext commandContext, KeyphProQueryDbContext queryContext) : IUnitOfWork
     {
-        private readonly DbContext _commandContext = commandContext;
-        private readonly DbContext _queryContext = queryContext;
+        private readonly KeyphProCommandDbContext _commandContext = commandContext;
+        private readonly KeyphProQueryDbContext _queryContext = queryContext;
         private readonly Dictionary<Type, object> _commandRepositories = [];
         private readonly Dictionary<Type, object> _queryRepositories = [];
         /// <summary>

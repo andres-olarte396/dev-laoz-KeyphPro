@@ -1,13 +1,13 @@
-﻿using AutoMapper;
+﻿    using AutoMapper;
 using KeyphPro.Domain.Entities.Commond;
 using KeyphPro.Domain.Entities.Database;
 using KeyphPro.Domain.Repositories;
 using KeyphPro.Domain.Services;
 using System.ComponentModel.DataAnnotations;
 
-namespace KeyphPro.Application
+namespace KeyphPro.Application.Commond
 {
-    public class BasicService<TModel, TEntity, TId> : 
+    public class BasicService<TModel, TEntity, TId> :
         IBasicService<TModel, TEntity, TId>
             where TEntity : class, IEntityBase<TId>
             where TModel : ModelBase<TId>
@@ -27,12 +27,13 @@ namespace KeyphPro.Application
         public async Task<ResultModelBase<TModel?>> AddAsync(TModel model)
         {
             var results = Validate(model);
-
             if (results.Count != 0)
-                return default;
+            {
+                var msg = string.Join("\n - ", results);
+                return new ResultModelBase<TModel?>(msg);
+            }
 
             var entity = _mapper.Map<TEntity>(model);
-
             entity.OperationType = OperationType.Create;
             entity.Date = DateTime.Now;
             entity.User = "System";
@@ -95,7 +96,8 @@ namespace KeyphPro.Application
                 var results = Validate(model);
                 if (results.Count != 0)
                 {
-                    return new ResultModelBase<bool>("");
+                    var msg = string.Join("\n - ", results);
+                    return new ResultModelBase<bool>(msg);
                 }
 
                 var result = await _unitOfWork.CommandRepository<TEntity, TId>().UpdateAsync(entity);

@@ -1,5 +1,7 @@
 ﻿using KeyphPro.Domain.Entities.Commond;
+using KeyphPro.Domain.Entities.Database;
 using KeyphPro.Domain.Repositories.Queries;
+using KeyphPro.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
@@ -16,7 +18,7 @@ namespace KeyphPro.Infrastructure
     /// </typeparam>
     public class QueryRepository<TEntity, TId> : IQueryRepository<TEntity, TId> where TEntity : class, IEntityBase<TId>
     {
-        private readonly DbContext _context;
+        private readonly KeyphProQueryDbContext _context;
         private readonly DbSet<TEntity> _dbSet;
 
         /// <summary>
@@ -25,7 +27,7 @@ namespace KeyphPro.Infrastructure
         /// <param name="context">
         /// The database context
         /// </param>
-        public QueryRepository(DbContext context)
+        public QueryRepository(KeyphProQueryDbContext context)
         {
             _context = context;
             _dbSet = _context.Set<TEntity>();
@@ -95,6 +97,48 @@ namespace KeyphPro.Infrastructure
             {
                 return _dbSet.Where(predicate).FirstOrDefault(x => !x.Deleted);
             });
+        }
+
+        /// <summary>
+        /// Ejecuta un script SQL y mapea el resultado a una lista de un modelo específico.
+        /// </summary>
+        /// <typeparam name="TResult">El tipo del modelo de resultado.</typeparam>
+        /// <param name="sqlScript">El script SQL a ejecutar.</param>
+        /// <param name="parameters">Parámetros opcionales para el script SQL.</param>
+        /// <returns>Lista de resultados mapeados al modelo.</returns>
+        public async Task<List<TResult>> ExecuteSqlScriptMappedAsync<TResult>(string sqlScript, params object[] parameters) where TResult : class
+        {
+            return await _context.Set<TResult>().FromSqlRaw(sqlScript, parameters).ToListAsync();
+        }
+
+        /// <summary>
+        /// Ejecuta un script almacenado en la tabla StoredScripts y mapea el resultado a un modelo.
+        /// </summary>
+        /// <typeparam name="TResult">Modelo al que se mapeará el resultado.</typeparam>
+        /// <param name="scriptName">Nombre del script en la tabla StoredScripts.</param>
+        /// <param name="parameters">Parámetros opcionales para el script SQL.</param>
+        /// <returns>Lista de resultados mapeados al modelo.</returns>
+        public async Task<List<TResult>> ExecuteStoredScriptMappedAsync<TResult>(string scriptName, Dictionary<string, object> parameters = null) where TResult : class
+        {
+            // Buscar el script en la tabla StoredScripts
+            var storedScript = await _context.Set<StoredScript>().FirstOrDefaultAsync(s => s.Name == scriptName);
+            if (storedScript == null)
+                throw new KeyNotFoundException($"No se encontró el script con el nombre '{scriptName}'.");
+
+            // Preparar el SQL dinámico
+            var sql = storedScript.SqlScript;
+            var sqlParameters = new List<object>();
+
+            if (parameters != null)
+            {
+                foreach (var param in parameters)
+                {
+                    sql = sql.Replace($"@{param.Key}", $"'{param.Value}'"); // Reemplazo básico para SQLite
+                }
+            }
+
+            // Ejecutar el script SQL
+            return await _context.Set<TResult>().FromSqlRaw(sql).ToListAsync();
         }
     }
 }

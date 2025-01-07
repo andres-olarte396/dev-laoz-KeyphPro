@@ -6,8 +6,14 @@ namespace KeyphPro.Domain.Entities.Models
     public class UserModel : ModelBase<Guid>
     {
         [Required]
-        [StringLength(100, ErrorMessage = "Full Name must not exceed 100 characters.")]
-        public string FullName { get; set; }
+        [StringLength(50, ErrorMessage = "First Name must not exceed 50 characters.")]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "First Name must contain only letters.")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [StringLength(50, ErrorMessage = "Last Name must not exceed 50 characters.")]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Last Name must contain only letters.")]
+        public string LastName { get; set; }
 
         [Required]
         [EmailAddress(ErrorMessage = "Invalid Email Address.")]

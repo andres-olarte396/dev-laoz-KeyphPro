@@ -1,7 +1,7 @@
 ﻿using Serilog;
 using KeyphPro.Domain.Services;
 
-namespace KeyphPro.Application
+namespace KeyphPro.Application.Commond
 {
     /// <summary>
     /// Logger Adapter

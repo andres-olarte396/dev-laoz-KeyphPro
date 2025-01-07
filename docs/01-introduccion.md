@@ -13,10 +13,11 @@ Bienvenido a la documentación de KeyphPro. Este documento te guiará a través 
 
 KeyphPro es una herramienta poderosa y fácil de usar para la gestión de claves y contraseñas. Con KeyphPro, puedes:
 
-- Almacenar y organizar tus contraseñas de manera segura.
-- Generar contraseñas fuertes y únicas.
-- Acceder a tus contraseñas desde cualquier dispositivo.
-- Compartir contraseñas de manera segura con otros usuarios.
+1. Registro de usuarios.
+2. Captura y validación de métricas físicas.
+3. Cálculo automático de índices importantes como el Índice de Masa Corporal (BMI).
+4. Visualización del historial de valoraciones.
+5. Exportación de datos para análisis externo.
 
 ## Características Principales
 

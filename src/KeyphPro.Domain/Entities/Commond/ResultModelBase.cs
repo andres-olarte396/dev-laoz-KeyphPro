@@ -1,4 +1,6 @@
-﻿namespace KeyphPro.Domain.Entities.Commond
+﻿using KeyphPro.Domain.Entities.Models;
+
+namespace KeyphPro.Domain.Entities.Commond
 {
     public class ResultModelBase<TModel>
     {
