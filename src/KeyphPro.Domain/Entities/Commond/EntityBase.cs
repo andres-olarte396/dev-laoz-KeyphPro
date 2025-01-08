@@ -30,14 +30,6 @@ namespace KeyphPro.Domain.Entities.Commond
         [Key]
         public TId Id { get; set; }
         /// <summary>
-        /// Gets or sets the user.
-        /// </summary>
-        /// <value>
-        /// The user.
-        /// </value>
-        [JsonIgnore]
-        public string? UserName { get; set; } = "Undefined";
-        /// <summary>
         /// Gets or sets the date.
         /// </summary>
         /// <value>
@@ -61,8 +53,13 @@ namespace KeyphPro.Domain.Entities.Commond
         /// </value>
         [JsonIgnore]
         public OperationType OperationType { get; set; } = OperationType.Create;
-        public string User { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
+        /// <summary>
+        /// Gets or sets the user.
+        /// </summary>
+        /// <value>
+        /// The user.
+        /// </value>
+        public string Username { get; set; }
         /// <summary>
         /// Gets or sets the error.
         /// </summary>
@@ -99,7 +96,7 @@ namespace KeyphPro.Domain.Entities.Commond
         {
             return new Audit()
             {
-                User = this.User,
+                Username = this.Username,
                 Id = 0,
                 IdAudit = this.Id?.ToString(),
                 Entity = GetType().Name,

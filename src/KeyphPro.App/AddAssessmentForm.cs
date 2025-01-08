@@ -8,9 +8,9 @@
     public class AddAssessmentForm : Form
     {
         private readonly IAssessmentService _assessmentService;
-        private Label lblDate, lblHeight, lblWeight, lblBMI, lblBodyFat, lblMuscleMass, lblDailyCalories;
+        private Label lblDate, lblHeight, lblWeight, lblBMI, lblBodyFat, lblViseralFat, lblMuscleMass, lblDailyCalories;
         private Label lblShoulder, lblArm, lblWaist, lblHip, lblLeg, lblCalf, lblMetabolicState;
-        private TextBox txtWeight, txtHeight, txtBMI, txtBodyFat, txtMuscleMass, txtDailyCalories;
+        private TextBox txtWeight, txtHeight, txtBMI, txtBodyFat, txtViseralFat, txtMuscleMass, txtDailyCalories;
         private TextBox txtShoulder, txtArm, txtWaist, txtHip, txtLeg, txtCalf;
         private ComboBox cmbMetabolicState;
         private DateTimePicker dtpDate;
@@ -18,8 +18,8 @@
 
         public AddAssessmentForm(IAssessmentService assessmentService)
         {
-            Text = "Add Assessment";
-            Size = new System.Drawing.Size(400, 660);
+            Text = "Agregar valoración";
+            Size = new System.Drawing.Size(400, 700);
             _assessmentService = assessmentService;
             InitializeComponents();
         }
@@ -27,20 +27,21 @@
         private void InitializeComponents()
         {
             // Labels
-            lblDate = CreateLabel("Date:", 20, 20);
-            lblWeight = CreateLabel("Weight (kg):", 20, 60);
-            lblHeight = CreateLabel("Height (cm):", 20, 100);
-            lblBodyFat = CreateLabel("Body Fat (%):", 20, 140);
-            lblMuscleMass = CreateLabel("Muscle Mass (%):", 20, 180);
-            lblDailyCalories = CreateLabel("Daily Calories:", 20, 220);
-            lblShoulder = CreateLabel("Shoulder (cm):", 20, 260);
-            lblArm = CreateLabel("Arm (cm):", 20, 300);
-            lblWaist = CreateLabel("Waist (cm):", 20, 340);
-            lblHip = CreateLabel("Hip (cm):", 20, 380);
-            lblLeg = CreateLabel("Leg (cm):", 20, 420);
-            lblCalf = CreateLabel("Calf (cm):", 20, 460);
-            lblMetabolicState = CreateLabel("Metabolic State:", 20, 500);
-            lblBMI = CreateLabel("BMI (Auto-Calculated):", 20, 540);
+            lblDate = CreateLabel("Fecha:", 20, 20);
+            lblWeight = CreateLabel("Peso (kg):", 20, 60);
+            lblHeight = CreateLabel("Altura (cm):", 20, 100);
+            lblBodyFat = CreateLabel("Grasa corporal (%):", 20, 140);
+            lblViseralFat = CreateLabel("Grasa viseral (%):", 20, 180);
+            lblMuscleMass = CreateLabel("Masa muscular (%):", 20, 220);
+            lblDailyCalories = CreateLabel("Calorias:", 20, 260);
+            lblShoulder = CreateLabel("Hombro (cm):", 20, 300);
+            lblArm = CreateLabel("Brazo (cm):", 20, 340);
+            lblWaist = CreateLabel("Cintura (cm):", 20, 380);
+            lblHip = CreateLabel("Cadera (cm):", 20, 420);
+            lblLeg = CreateLabel("Pierna (cm):", 20, 460);
+            lblCalf = CreateLabel("Pantorrilla (cm):", 20, 500);
+            lblMetabolicState = CreateLabel("Estado metabolico:", 20, 540);
+            lblBMI = CreateLabel("BMI (Calculado):", 20, 580);
 
             // Controls
             dtpDate = new DateTimePicker
@@ -54,30 +55,31 @@
             txtWeight = CreateTextBox(180, 60, true);
             txtHeight = CreateTextBox(180, 100, true);
             txtBodyFat = CreateTextBox(180, 140, true);
-            txtMuscleMass = CreateTextBox(180, 180, true);
-            txtDailyCalories = CreateTextBox(180, 220, true);
-            txtShoulder = CreateTextBox(180, 260, true);
-            txtArm = CreateTextBox(180, 300, true);
-            txtWaist = CreateTextBox(180, 340, true);
-            txtHip = CreateTextBox(180, 380, true);
-            txtLeg = CreateTextBox(180, 420, true);
-            txtCalf = CreateTextBox(180, 460, true);
-            txtBMI = CreateTextBox(180, 540, true);
-            txtBMI.Enabled = false;
+            txtViseralFat = CreateTextBox(180, 180, true);
+            txtMuscleMass = CreateTextBox(180, 220, true);
+            txtDailyCalories = CreateTextBox(180, 260, true);
+            txtShoulder = CreateTextBox(180, 300, true);
+            txtArm = CreateTextBox(180, 340, true);
+            txtWaist = CreateTextBox(180, 380, true);
+            txtHip = CreateTextBox(180, 420, true);
+            txtLeg = CreateTextBox(180, 460, true);
+            txtCalf = CreateTextBox(180, 500, true);
             cmbMetabolicState = new ComboBox
             {
-                Location = new System.Drawing.Point(180, 500),
+                Location = new System.Drawing.Point(180, 540),
                 DropDownStyle = ComboBoxStyle.DropDownList,
                 Items = { "Normal", "Altered", "Not Measured" },
                 SelectedIndex = 0,
                 Width = 180
             };
+            txtBMI = CreateTextBox(180, 580, true);
+            txtBMI.Enabled = false;
 
             // Save Button
             btnSave = new Button
             {
-                Text = "Save",
-                Location = new System.Drawing.Point(150, 580),
+                Text = "Guardar",
+                Location = new System.Drawing.Point(150, 620),
                 AutoSize = true,
                 Width = 100
             };
@@ -91,6 +93,7 @@
                 lblHeight, txtHeight,
                 lblBMI, txtBMI,
                 lblBodyFat, txtBodyFat,
+                lblViseralFat, txtViseralFat,
                 lblMuscleMass, txtMuscleMass,
                 lblDailyCalories, txtDailyCalories,
                 lblShoulder, txtShoulder,
@@ -123,6 +126,7 @@
                     Weight = decimal.Parse(txtWeight.Text),
                     Heigth = decimal.Parse(txtHeight.Text),
                     BodyFatPercentage = decimal.Parse(txtBodyFat.Text),
+                    ViseralFat = decimal.Parse(txtViseralFat.Text),
                     MuscleMassPercentage = decimal.Parse(txtMuscleMass.Text),
                     DailyCalories = int.Parse(txtDailyCalories.Text),
                     Shoulder = decimal.Parse(txtShoulder.Text),
@@ -131,7 +135,7 @@
                     Hip = decimal.Parse(txtHip.Text),
                     Leg = decimal.Parse(txtLeg.Text),
                     Calf = decimal.Parse(txtCalf.Text),
-                    MetabolicState = cmbMetabolicState.Text
+                    MetabolicState = cmbMetabolicState.Text,
                 };
 
                 // Calculate BMI
@@ -179,7 +183,6 @@
 
         private TextBox CreateTextBox(int x, int y, bool isNumeric = false)
         {
-
             var txt = new TextBox
             {
                 Location = new Point(x, y),

@@ -23,7 +23,7 @@ namespace KeyphPro.Domain.Entities.Commond
         /// The user.
         /// </value>
         [JsonIgnore]
-        string User { get; set; }
+        string Username { get; set; }
         /// <summary>
         /// Gets or sets the date.
         /// </summary>

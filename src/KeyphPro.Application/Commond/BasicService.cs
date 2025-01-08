@@ -38,7 +38,7 @@ namespace KeyphPro.Application.Commond
                 var entity = _mapper.Map<TEntity>(model);
                 entity.OperationType = OperationType.Create;
                 entity.Date = DateTime.Now;
-                entity.User = "System";
+                entity.Username = "System";
                 entity.Id = await _unitOfWork.CommandRepository<TEntity, TId>().CreateAsync(entity);
                 await _unitOfWork.SaveChangesAsync();
 
@@ -64,7 +64,7 @@ namespace KeyphPro.Application.Commond
 
             entity.OperationType = OperationType.Delete;
             entity.Date = DateTime.Now;
-            entity.User = "System";
+            entity.Username = "System";
             entity.Deleted = true;
 
             try
@@ -88,7 +88,7 @@ namespace KeyphPro.Application.Commond
             var entity = _mapper.Map<TEntity>(model);
             entity.OperationType = OperationType.Update;
             entity.Date = DateTime.Now;
-            entity.User = "System";
+            entity.Username = "System";
 
             try
             {

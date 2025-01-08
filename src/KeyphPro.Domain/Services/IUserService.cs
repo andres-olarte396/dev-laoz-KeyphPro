@@ -3,11 +3,11 @@ using KeyphPro.Domain.Entities.Models;
 
 namespace KeyphPro.Domain.Services
 {
-    public interface IUserRegistrationService
+    public interface IUserService
     {
         Task<ResultModelBase<UserModel>> RegisterUser(UserModel user);
-        Task<ResultModelBase<UserModel>> UpdateUser(UserModel user);
+        Task<ResultModelBase<bool>> EditUser(UserModel user);
         Task<ResultModelBase<bool>> DeleteUser(UserModel user);
-        Task<ResultModelBase<UserModel>> ValidateUserData(UserModel user);
+        ResultModelBase<bool> ValidateUserData(UserModel user);
     }
 }

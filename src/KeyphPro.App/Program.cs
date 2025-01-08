@@ -74,6 +74,7 @@ namespace KeyphPro.App
                    // Registrar los servicios
                    services.AddTransient(typeof(IBasicService<,,>), typeof(BasicService<,,>));
                    services.AddTransient(typeof(IAssessmentService), typeof(AssessmentService));
+                   services.AddTransient(typeof(IUserService), typeof(UserService));
 
                    // Register the main form and other usercontrols
                    services.AddScoped<AddAssessmentForm>();

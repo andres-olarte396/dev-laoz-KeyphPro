@@ -88,7 +88,7 @@ namespace KeyphPro.Application.Services
         {
             try
             {
-                var assessments = await _unitOfWork.QueryRepository<Assessment, int>().GetByQueryAsync(x => x.User.Id == userId);
+                var assessments = await _unitOfWork.QueryRepository<Assessment, int>().GetByQueryAsync(x => x.UserId == userId);
                 var result = _mapper.Map<IEnumerable<AssessmentModel>>(assessments);
                 return new ResultModelBase<IEnumerable<AssessmentModel>>(result);
             }

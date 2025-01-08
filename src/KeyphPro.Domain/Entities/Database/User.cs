@@ -9,8 +9,5 @@ namespace KeyphPro.Domain.Entities.Database
         public DateTime DateOfBirth { get; set; }
         public string Gender { get; set; } // Male, Female
         public DateTime RegistrationDate { get; set; }
-
-        // Navigation Properties
-        public ICollection<Assessment> Assessments { get; set; } = [];
     }
 }
